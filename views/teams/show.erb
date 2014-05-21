@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Basic HTML Page</title>
+    <!-- <link rel="stylesheet" href="home.css" /> -->
+  </head>
+
+  <body>
+    <h1>Kickball League Roster</h1>
+
+    <ul>
+      <!-- Since this is the only code that we want to actually output, we will wrap it with the <%= %> tag -->
+      <li>Team:
+        <ul>
+          <% @team.each do |player| %>
+            <li><%= "#{player[:first_name]} #{player[:last_name]} - #{player[:position]}" %></li>
+          <% end %>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>

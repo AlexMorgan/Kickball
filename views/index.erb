@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Basic HTML Page</title>
+    <!-- <link rel="stylesheet" href="home.css" /> -->
+  </head>
+
+  <body>
+    <h1>Kickball League Roster</h1>
+
+    <ul>
+      <!-- Since this is the only code that we want to actually output, we will wrap it with the <%= %> tag -->
+      <li>Teams:
+        <ul>
+          <% @teams_list.each do |team| %>
+            <li><a href="<%="/teams/#{team}"%>"> <%= team %> </a></li>
+          <% end %>
+        </ul>
+      </li>
+      <li>Positions:
+        <ul>
+          <% @positions_list.each do |position| %>
+          <!-- Capitalize the first letter of each word -->
+            <li><a href="<%="/positions/#{position}"%>"><%= position %></a></li>
+          <% end %>
+        </ul>
+      </li>
+
+    </ul>
+  </body>
+</html>
+
+
+<!-- .erb files act as the VIEW of our MVC (VC) framework -->
